@@ -1,0 +1,23 @@
+<launch>
+    <!-- Set to true to record-->
+    <arg name="record" default="false"/>
+    <!-- Turtlebot world launch file-->
+    <include file="$(find turtlebot_walker)/launch/turtlebot3_world.launch">
+    </include>
+
+    <!-- Launch walker node-->
+    <node 
+        pkg="turtlebot_walker"
+        type="walker"
+        name="walker"
+        output="screen"
+    />
+    <!-- Launch rosbag node -->
+    <node 
+        pkg="rosbag"
+        name="record"
+        type="record"
+        args="-a -O $(find turtlebot_walker)/results/turtlebot_walker.bag -x /camera/(.*)" 
+        if="$(arg record)"
+    />
+</launch>

@@ -1,0 +1,19 @@
+my_turtle:
+  background_r: 200
+rosdistro: 'noetic
+
+  '
+roslaunch:
+  uris:
+    host_m057_121_3__40287: http://M057-121-3:40287/
+rosversion: '1.15.14
+
+  '
+run_id: 3aa9058a-2e9c-11ed-b8e1-45ef97bddc6a
+turtle:
+  background_g: 200
+  background_r: 200
+turtlesim:
+  background_b: 255
+  background_g: 151648648
+  background_r: 151648648
