@@ -12,13 +12,12 @@ void sdw::Walker::laserCallback(const sensor_msgs::LaserScan::ConstPtr& data) {
 }
 
 sdw::Walker::Walker(ros::NodeHandle node) {
-    // ROS subscriber to LaserScan
+
     ros::Subscriber laserSubscriber = node.subscribe("/scan", 1000, &Walker::laserCallback, this);
 
-    // ROS publisher to velocity topic
     ros::Publisher velocityPublisher = node.advertise<geometry_msgs::Twist>("/cmd_vel", 1);
 
-    // Looprate of 4 Hz
+
     ros::Rate rate(4);
 
     while (ros::ok()) {
